@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HuxP - Vocaloid Producer</title>
     <link rel="stylesheet" href="styles.css"> <!-- Create a separate CSS file for styling -->
-    <link href="https://fonts.googleapis.com/css2?family=Cute+Font&display=swap" rel="stylesheet"> <!-- Replace 'Cute Font' with your chosen Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet"> <!-- Replace 'Roboto' with your chosen Google Font -->
     <style>
         body {
-            font-family: 'Cute Font', sans-serif;
-            background-color: #b2ebf2; /* Miku Blue */
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212; /* Dark Background */
             color: #ff80ab; /* Miku Pink */
             margin: 0;
             padding: 0;
@@ -19,19 +19,55 @@
         header {
             text-align: center;
             padding: 20px;
+            background-image: url('https://wallpapercave.com/wp/wp1991769.jpg');
+            background-size: cover;
+            background-position: center;
+            transition: background-color 0.5s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header:hover {
+            background-color: #424242; /* Darker Background on Hover */
+        }
+
+        h1:hover span {
+            animation: colorChange 0.5s infinite;
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: #ff80ab; /* Miku Pink */
+            }
+
+            25% {
+                color: #80deea; /* Lighter Miku Blue */
+            }
+
+            50% {
+                color: #f06292; /* Lighter Pink */
+            }
+
+            75% {
+                color: #40c4ff; /* Darker Miku Blue */
+            }
+
+            100% {
+                color: #ff80ab; /* Miku Pink */
+            }
         }
 
         section {
             margin: 20px;
             padding: 20px;
-            background-color: #80deea; /* Lighter Miku Blue */
+            background-color: #212121; /* Darker Background for Sections */
             border-radius: 10px;
         }
 
         footer {
             text-align: center;
             padding: 10px;
-            background-color: #b2ebf2;
+            background-color: #424242;
             position: fixed;
             bottom: 0;
             width: 100%;
@@ -42,7 +78,7 @@
 <body>
     <!-- Header Section -->
     <header>
-        <h1>HuxP - Vocaloid Producer</h1>
+        <h1><span>H</span><span>u</span><span>x</span><span>P</span> - Vocaloid Producer</h1>
     </header>
 
     <!-- Album Sections -->
