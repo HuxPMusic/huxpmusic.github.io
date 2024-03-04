@@ -34,6 +34,7 @@
         h1 {
             font-weight: bold; /* Make header text bold */
             display: inline-block;
+            margin: 0;
         }
 
         h1 span:hover {
@@ -95,11 +96,9 @@
         }
 
         img.miku {
-            max-width: 50px;
-            max-height: 50px;
-            position: absolute;
-            top: 70px;
-            left: 20px;
+            max-width: 100%;
+            max-height: 200px;
+            margin-bottom: 20px;
             transition: transform 0.3s ease-out;
         }
 
@@ -127,7 +126,7 @@
 
     <!-- Banner Section -->
     <section id="banner">
-        <img src="https://wallpapercave.com/wp/wp1991769.jpg" alt="Banner Image">
+        <img src="https://wallpapercave.com/wp/wp1991769.jpg" alt="Banner Image" style="max-width: 100%; height: auto;">
     </section>
 
     <!-- Album Sections -->
