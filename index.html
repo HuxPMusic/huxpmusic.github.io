@@ -21,8 +21,6 @@
             padding: 20px;
             background-color: #212121; /* Darker Background */
             transition: background-color 0.5s;
-            position: relative;
-            overflow: hidden;
         }
 
         header:hover {
@@ -31,13 +29,12 @@
 
         h1 {
             font-weight: bold; /* Make header text bold */
-            display: inline-block;
             margin: 0;
             font-size: 1.5em; /* Adjust font size for responsiveness */
         }
 
         h1 span:hover {
-            animation: colorChange 0.2s infinite;
+            animation: colorChange 1s infinite; /* Adjusted animation speed to 1s */
         }
 
         @keyframes colorChange {
@@ -101,34 +98,6 @@
             display: block;
         }
 
-        img.miku {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-            transition: transform 0.1s ease-out;
-            display: inline-block;
-            vertical-align: middle;
-            max-height: 1.5em; /* Match the header text size */
-        }
-
-        img.miku:hover {
-            animation: jump 0.5s ease-out infinite;
-        }
-
-        @keyframes jump {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-
-            40% {
-                transform: translateY(-15px);
-            }
-
-            60% {
-                transform: translateY(-10px);
-            }
-        }
-
         footer {
             text-align: center;
             padding: 10px;
@@ -143,7 +112,6 @@
 <body>
     <!-- Header Section -->
     <header>
-        <img class="miku" src="https://static.wikia.nocookie.net/projectsekai/images/6/66/Hatsune_Miku_-_VIRTUAL_SINGER_Chibi.png" alt="Jumping Miku Chibi">
         <h1><span>H</span><span>u</span><span>x</span><span>P</span></h1>
     </header>
 
