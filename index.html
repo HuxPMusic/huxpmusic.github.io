@@ -82,20 +82,17 @@
         }
 
         .content {
-            display: none;
+            max-height: 0;
             overflow: hidden;
+            transition: max-height 0.3s ease-out;
             background-color: #212121; /* Darker Background for Collapsible Content */
             padding: 20px;
             border-radius: 5px;
-            position: absolute;
-            top: 50px;
-            left: 0;
-            width: 100%;
-            z-index: -1;
         }
 
-        .collapsible:hover .content {
-            display: block;
+        .collapsible.active .content {
+            max-height: 1000px; /* Adjust to a suitable max height */
+            transition: max-height 0.5s ease-in;
         }
 
         footer {
@@ -150,6 +147,12 @@
         for (i = 0; i < coll.length; i++) {
             coll[i].addEventListener("click", function () {
                 this.classList.toggle("active");
+                var content = this.querySelector(".content");
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
             });
         }
     </script>
