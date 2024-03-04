@@ -81,6 +81,7 @@
             border-radius: 5px;
             margin-bottom: 10px;
             font-size: 1.2em; /* Adjust font size for responsiveness */
+            position: relative;
         }
 
         .content {
@@ -89,10 +90,15 @@
             background-color: #212121; /* Darker Background for Collapsible Content */
             padding: 20px;
             border-radius: 5px;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            z-index: -1;
         }
 
-        .collapsible:hover {
-            background-color: #616161; /* Slightly lighter background on hover */
+        .collapsible:hover .content {
+            display: block;
         }
 
         img.miku {
@@ -100,6 +106,9 @@
             height: auto;
             margin-bottom: 20px;
             transition: transform 0.1s ease-out;
+            display: inline-block;
+            vertical-align: middle;
+            max-height: 1.5em; /* Match the header text size */
         }
 
         img.miku:hover {
@@ -173,12 +182,6 @@
         for (i = 0; i < coll.length; i++) {
             coll[i].addEventListener("click", function () {
                 this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                } else {
-                    content.style.display = "block";
-                }
             });
         }
     </script>
