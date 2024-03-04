@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HuxP - Vocaloid Producer</title>
     <link rel="stylesheet" href="styles.css"> <!-- Create a separate CSS file for styling -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet"> <!-- Replace 'Roboto' with your chosen Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet"> <!-- Use Roboto Bold for header text -->
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -31,7 +31,12 @@
             background-color: #424242; /* Darker Background on Hover */
         }
 
-        h1:hover span {
+        h1 {
+            font-weight: bold; /* Make header text bold */
+            display: inline-block;
+        }
+
+        h1 span:hover {
             animation: colorChange 0.5s infinite;
         }
 
@@ -64,6 +69,44 @@
             border-radius: 10px;
         }
 
+        .collapsible {
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            outline: none;
+            border: none;
+            background-color: #424242; /* Darker Background for Collapsible Headers */
+            color: #ff80ab; /* Miku Pink */
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .content {
+            display: none;
+            overflow: hidden;
+            background-color: #212121; /* Darker Background for Collapsible Content */
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .collapsible:hover {
+            background-color: #616161; /* Slightly lighter background on hover */
+        }
+
+        img.miku {
+            max-width: 50px;
+            max-height: 50px;
+            position: absolute;
+            top: 70px;
+            left: 20px;
+            transition: transform 0.3s ease-out;
+        }
+
+        img.miku:hover {
+            transform: translateY(-10px);
+        }
+
         footer {
             text-align: center;
             padding: 10px;
@@ -78,29 +121,59 @@
 <body>
     <!-- Header Section -->
     <header>
+        <img class="miku" src="https://static.wikia.nocookie.net/projectsekai/images/6/66/Hatsune_Miku_-_VIRTUAL_SINGER_Chibi.png" alt="Jumping Miku Chibi">
         <h1><span>H</span><span>u</span><span>x</span><span>P</span> - Vocaloid Producer</h1>
     </header>
 
+    <!-- Banner Section -->
+    <section id="banner">
+        <img src="https://wallpapercave.com/wp/wp1991769.jpg" alt="Banner Image">
+    </section>
+
     <!-- Album Sections -->
-    <section id="vocarips">
+    <div class="collapsible">
         <h2>Vocarips (2023)</h2>
-        <!-- Add content for Vocarips -->
-    </section>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur massa in nisi pharetra, vel finibus mi finibus.</p>
+        </div>
+    </div>
 
-    <section id="vocadiva">
+    <div class="collapsible">
         <h2>Vocadiva (2024)</h2>
-        <!-- Add content for Vocadiva -->
-    </section>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur massa in nisi pharetra, vel finibus mi finibus.</p>
+        </div>
+    </div>
 
-    <section id="vocapulse">
+    <div class="collapsible">
         <h2>VocaPulse (Unreleased, In the Works)</h2>
-        <!-- Add content for VocaPulse -->
-    </section>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin efficitur massa in nisi pharetra, vel finibus mi finibus.</p>
+        </div>
+    </div>
 
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2024 HuxP. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Script for collapsible sections
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
