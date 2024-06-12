@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>:3</title>
+    <title>Windows 8 Start Menu Theme</title>
     <style>
         @keyframes rainbow {
-            0% { color: #ff9a9e; }
+            0%, 100% { color: #ff9a9e; }
             14% { color: #fad0c4; }
-            28% { color: #fad0c4; }
-            42% { color: #fcb69f; }
-            57% { color: #ff9a9e; }
-            71% { color: #fcb69f; }
-            85% { color: #ff9a9e; }
-            100% { color: #ff9a9e; }
+            28% { color: #fcb69f; }
+            42% { color: #ff9a9e; }
+            57% { color: #fcb69f; }
+            71% { color: #ff9a9e; }
+            85% { color: #fcb69f; }
         }
         
         body {
@@ -120,6 +119,21 @@
             align-items: center;
             z-index: 1000;
         }
+        #bob-image {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.pinimg.com/564x/9c/20/7b/9c207b69cbc995b7a7ebd3efe41d0d91.jpg');
+            background-size: cover;
+            opacity: 0.3;
+            z-index: 1000;
+        }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -128,7 +142,7 @@
             <img src="https://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Folders-OS-User-No-Frame-Metro-icon.png" alt="Admin Icon">
             <span>Admin</span>
         </div>
-        <button class="search-button">
+        <button class="search-button" onclick="focusSearchBar()">
             <img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-search-128.png" alt="Search Icon">
         </button>
         <button class="power-button" onclick="showPowerOffScreen()">
@@ -158,17 +172,36 @@
         </a>
     </div>
 
-    <div id="power-off-screen">
-        <h1>Shutting down...</h1>
+    <div id="power-off-screen" class="hidden">
+        <h1>:(&nbsp;&nbsp;Your PC ran into a problem and needs to restart. We're just collecting some error info, and then we'll restart for you.</h1>
+        <p>:3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3 :3</p>
     </div>
 
     <audio id="shutdown-sound" src="https://www.myinstants.com/media/sounds/windows-8-shutdown-sound.mp3"></audio>
 
     <script>
         function showPowerOffScreen() {
-            document.getElementById('power-off-screen').style.display = 'flex';
+            document.getElementById('power-off-screen').classList.remove('hidden');
             document.getElementById('shutdown-sound').play();
         }
+
+        function focusSearchBar() {
+            // Simulate focusing on the search bar
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key.toLowerCase() === 'b' || event.key.toLowerCase() === 'o' || event.key.toLowerCase() === 'b') {
+                const bobImage = document.getElementById('bob-image');
+                if (bobImage.style.display === 'none' || bobImage.style.display === '') {
+                    bobImage.style.display = 'block';
+                } else {
+                    bobImage.style.display = 'none';
+                }
+            }
+            if (event.key.toLowerCase() === 'm' && event.key.toLowerCase() === 'i' && event.key.toLowerCase() === 'k' && event.key.toLowerCase() === 'u') {
+                window.location.href = 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi1.wp.com%2Fkillscreen.com%2Fwp-content%2Fuploads%2Fsites%2F2%2F2016%2F06%2Foriginal.jpg%3Fresize%3D800%252C1115%26ssl%3D1&f=1&nofb=1&ipt=01712edeb2a51ad5706106d72ec1268d718a60c02ffaf44ef90639a2fe61c665&ipo=images';
+            }
+        });
     </script>
 </body>
 </html>
