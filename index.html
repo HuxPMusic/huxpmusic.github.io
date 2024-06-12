@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Windows 8</title>
+    <title>Windows 8 Start Menu Theme</title>
     <style>
         body {
             background-image: url('https://wallpapercave.com/wp/wp3456247.png');
@@ -13,7 +13,6 @@
             margin: 0;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             height: 100vh;
             text-align: center;
@@ -26,7 +25,7 @@
             padding: 10px;
             background-color: rgba(0, 0, 0, 0.8);
             border-radius: 5px;
-            margin-bottom: 20px;
+            margin-top: 20px;
             align-items: center;
         }
         .admin-bar img {
@@ -45,6 +44,10 @@
             padding: 5px;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .admin-bar .search-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
         }
         .admin-bar .search-button img {
             width: 20px;
@@ -53,11 +56,14 @@
         .start-screen {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            gap: 10px;
+            gap: 20px;
             padding: 20px;
             background-color: rgba(0, 0, 0, 0.6);
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            max-width: 1200px;
+            margin-top: 20px;
+            overflow: auto;
         }
         .tile {
             background-color: rgba(0, 0, 0, 0.8);
@@ -65,7 +71,7 @@
             padding: 20px;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -75,6 +81,7 @@
         }
         .tile:hover {
             background-color: rgba(0, 0, 0, 1);
+            transform: scale(1.1);
         }
         .tile img {
             width: 50px;
@@ -89,49 +96,49 @@
 <body>
     <div class="admin-bar">
         <div class="admin-info">
-            <img src="https://via.placeholder.com/40" alt="Admin Icon">
+            <img src="https://cdn.iconarchive.com/icons/dakirby309/windows-8-metro/256/Folders-OS-User-With-Frame-Metro-icon.png" alt="Admin Icon">
             <span>Admin</span>
         </div>
         <button class="search-button">
-            <img src="https://via.placeholder.com/20" alt="Search Icon">
+            <img src="https://cdn.iconarchive.com/icons/dakirby309/windows-8-metro/256/Folders-OS-Search-Metro-icon.png" alt="Search Icon">
         </button>
     </div>
     <div class="start-screen">
         <a class="tile" href="https://twitter.com/HuxPMusic" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Windows_Live_Mail_Icon.png/1024px-Windows_Live_Mail_Icon.png" alt="Twitter Icon">
+            <img src="https://cdn.iconarchive.com/icons/dakirby309/windows-8-metro/256/Messaging-Twitter-icon.png" alt="Twitter Icon">
             <span>Twitter</span>
         </a>
         <a class="tile" href="https://www.youtube.com/channel/UCjgGQNn6dPbnuLTvuRLTu5Q" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Windows_Media_Center_Logo.png" alt="YouTube Icon">
+            <img src="https://cdn.iconarchive.com/icons/dakirby309/windows-8-metro/256/Web-Youtube-alt-Metro-icon.png" alt="YouTube Icon">
             <span>YouTube</span>
         </a>
         <a class="tile" href="http://huxpmusic.com" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Internet_Explorer_9_icon.png/600px-Internet_Explorer_9_icon.png" alt="Website Icon">
+            <img src="https://cdn.iconarchive.com/icons/dakirby309/windows-8-metro/256/Web-Internet-Explorer-Metro-icon.png" alt="Website Icon">
             <span>Website</span>
         </a>
         <a class="tile" href="https://github.com/HuxPMusic" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Windows_Command_Prompt_Icon.png/1024px-Windows_Command_Prompt_Icon.png" alt="GitHub Icon">
+            <img src="https://cdn.iconarchive.com/icons/dakirby309/windows-8-metro/256/Other-Task-Manager-Metro-icon.png" alt="GitHub Icon">
             <span>GitHub</span>
         </a>
         <a class="tile" href="https://www.roblox.com/users/803982030/profile" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/en/1/19/Purble_Place_Icon.png" alt="Roblox Icon">
+            <img src="https://cdn.iconarchive.com/icons/dakirby309/windows-8-metro/256/Games-Minesweeper-Metro-icon.png" alt="Roblox Icon">
             <span>Roblox</span>
         </a>
         <!-- Additional tiles for more flushed out UI -->
         <div class="tile">
-            <img src="https://via.placeholder.com/50" alt="Placeholder Icon">
+            <img src="https://cdn.iconarchive.com/icons/dakirby309/windows-8-metro/256/Apps-Metro-icon.png" alt="Placeholder Icon">
             <span>App 1</span>
         </div>
         <div class="tile">
-            <img src="https://via.placeholder.com/50" alt="Placeholder Icon">
+            <img src="https://cdn.iconarchive.com/icons/dakirby309/windows-8-metro/256/Apps-Metro-icon.png" alt="Placeholder Icon">
             <span>App 2</span>
         </div>
         <div class="tile">
-            <img src="https://via.placeholder.com/50" alt="Placeholder Icon">
+            <img src="https://cdn.iconarchive.com/icons/dakirby309/windows-8-metro/256/Apps-Metro-icon.png" alt="Placeholder Icon">
             <span>App 3</span>
         </div>
         <div class="tile">
-            <img src="https://via.placeholder.com/50" alt="Placeholder Icon">
+            <img src="https://cdn.iconarchive.com/icons/dakirby309/windows-8-metro/256/Apps-Metro-icon.png" alt="Placeholder Icon">
             <span>App 4</span>
         </div>
     </div>
