@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⭐</title>
+    <title>Cute Pink Start Menu</title>
     <style>
         @keyframes rainbow {
             0%, 100% { color: #ff9a9e; }
@@ -14,10 +14,10 @@
             71% { color: #ff9a9e; }
             85% { color: #fcb69f; }
         }
-        
+
         body {
             background-color: #ffebef;
-            color: #ff9a9e;
+            color: #d47c7c;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             display: flex;
@@ -55,28 +55,26 @@
         .admin-bar .search-button, .admin-bar .power-button {
             background-color: rgba(255, 182, 193, 0.6);
             border: none;
-            padding: 5px;
+            padding: 10px;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
+            font-size: 20px;
         }
         .admin-bar .search-button:hover, .admin-bar .power-button:hover {
             background-color: rgba(255, 182, 193, 0.8);
-        }
-        .admin-bar .search-button img, .admin-bar .power-button img {
-            width: 20px;
-            height: 20px;
         }
         .search-bar {
             margin-left: 10px;
             padding: 5px;
             border-radius: 5px;
-            border: 1px solid #ff9a9e;
+            border: 1px solid #d47c7c;
             outline: none;
+            font-size: 16px;
         }
         .start-screen {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 20px;
             padding: 20px;
             background-color: rgba(255, 182, 193, 0.6);
@@ -107,11 +105,12 @@
         .tile img {
             width: 50px;
             height: 50px;
+            filter: grayscale(100%);
         }
         .tile span {
             margin-top: 10px;
-            font-size: 12px;
-            color: #ff9a9e;
+            font-size: 14px;
+            color: #d47c7c;
         }
         #power-off-screen {
             display: none;
@@ -147,36 +146,32 @@
 <body>
     <div class="admin-bar">
         <div class="admin-info">
-            <img src="https://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Folders-OS-User-No-Frame-Metro-icon.png" alt="Admin Icon">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fyt3.ggpht.com%2Fa%2FAGF-l782S5boDTgMThrdlm4DhCHnfy-mpVMYh0azng%3Ds900-c-k-c0xffffffff-no-rj-mo&f=1&nofb=1&ipt=0647ea99c82d954cd36c9f7ea102a7abd2ac49c78381ec1220aef205fa37c041&ipo=images" alt="Admin Icon">
             <span>Admin</span>
         </div>
         <input type="text" class="search-bar" id="search-bar" placeholder="Search...">
-        <button class="search-button" onclick="searchFunction()">
-            <img src="https://cdn-icons-png.flaticon.com/512/483/483356.png" alt="Search Icon">
-        </button>
-        <button class="power-button" onclick="showPowerOffScreen()">
-            <img src="https://cdn-icons-png.flaticon.com/512/748/748122.png" alt="Power Icon">
-        </button>
+        <button class="search-button" onclick="searchFunction()">🔍</button>
+        <button class="power-button" onclick="showPowerOffScreen()">🔌</button>
     </div>
     <div class="start-screen">
         <a class="tile" href="https://twitter.com/HuxPMusic" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter Icon">
+            <span>🐦</span>
             <span>Twitter</span>
         </a>
         <a class="tile" href="https://www.youtube.com/channel/UCjgGQNn6dPbnuLTvuRLTu5Q" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube Icon">
+            <span>📺</span>
             <span>YouTube</span>
         </a>
         <a class="tile" href="http://huxpmusic.com" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/1782/1782765.png" alt="Website Icon">
+            <span>🌐</span>
             <span>Website</span>
         </a>
         <a class="tile" href="https://github.com/HuxPMusic" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/270/270798.png" alt="GitHub Icon">
+            <span>🐙</span>
             <span>GitHub</span>
         </a>
         <a class="tile" href="https://www.roblox.com/users/803982030/profile" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/861/861398.png" alt="Roblox Icon">
+            <span>🎮</span>
             <span>Roblox</span>
         </a>
     </div>
@@ -192,7 +187,7 @@
 
     <script>
         function showPowerOffScreen() {
-            document.getElementById('power-off-screen').classList.remove('hidden');
+            document.getElementById('power-off-screen').style.display = 'flex';
             document.getElementById('shutdown-sound').play();
         }
 
